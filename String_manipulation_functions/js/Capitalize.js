@@ -1,21 +1,20 @@
-/*
+// function to capitalize the first letter of each word in a string
 function capitalise(str) {
-    let word = "";
-    let capStr = "";
-    let finalStr
-    for (let i = 0; i < str.length; i++) {
-        word += str[i];
-        if (str[i] === " ") {
-            word = word.charAt(0).toUpperCase() + word.slice(1);
-            capStr += word + " ";
-            word = "";
-            console.log(capStr)
-        } else {
-            
-        }
+    // split the input string into an array of words using spaces
+    let arr = str.split(" "); 
+    // an empty array to store capitalized words
+    let capStr = [];
+    // Iterate through each word in the array
+    for (let element of arr) {
+        // capitalize first letter and concatenate with the rest of the word
+        element = element[0].toUpperCase() + element.slice(1);
+        // push the capitalized word into the capStr array
+        capStr.push(element);
     }
-    return capStr;
-  }
-  
-  console.log(capitalise("lagos state is a very busy state"))
-*/ 
+    
+    // Join the capitalized words back into a single string with spaces
+    return capStr.join(" ");
+} 
+
+// sample use case
+console.log(capitalise("i agree that programmers make money"));
